@@ -1,0 +1,380 @@
+@import '_variables';
+@import '_mixins';
+
+.projects {
+  &__title {
+    margin-bottom: 0.75rem;
+    @include title-h2;
+    line-height: 1.75rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $grid-gap;
+    grid-auto-flow: dense;
+  }
+
+  &__item {
+    &:nth-child(-n + 3) {
+      grid-column: 2 span;
+      max-height: 18.75rem;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      grid-column: 6 span;
+    }
+
+    &:nth-last-child(-n + 2) {
+      grid-column: 3 span;
+    }
+
+    &:nth-child(5) {
+      .projects-large-card__descr {
+        margin-bottom: 1.375rem;
+      }
+    }
+  }
+
+  &__link {
+    transition: $transitionHoverColor, $transitionHoverBackgroundColor;
+
+    &:focus-visible {
+      background-color: $colorOrangeLighter;
+      outline: none;
+    }
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    &:active {
+      color: $colorOrangeDarker2;
+    }
+  }
+
+  // MEDIA
+  @include media('max', 'xl') {
+    &__list {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: $grid-gap;
+      row-gap: 24px;
+    }
+
+    &__item {
+      &:nth-child(-n + 2) {
+        grid-column: 2 span;
+      }
+
+      &:nth-child(3) {
+        grid-column: 4 span;
+      }
+
+      &:nth-child(4) {
+        grid-column: 5 span;
+        min-height: 19.1875rem;
+      }
+
+      &:nth-child(5) {
+        grid-column: 4 / 5 span;
+        min-height: 19.1875rem;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7) {
+        grid-column: 3 span;
+      }
+    }
+  }
+
+  @include media('max', 'lg') {
+    &__list {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__item {
+      &:nth-child(-n + 3) {
+        grid-column: 2 span;
+      }
+
+      &:nth-child(4) {
+        grid-column: 6 span;
+        min-height: 19.2rem;
+      }
+
+      &:nth-child(5) {
+        grid-column: 6 span;
+        order: 7;
+        min-height: 18.75rem;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7) {
+        grid-column: 3 span;
+      }
+    }
+  }
+
+  @include media('max', 'md') {
+    &.projects {
+      margin-bottom: 2.1875rem;
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+    }
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      &:nth-child(-n + 7) {
+        grid-column: 2 span;
+      }
+    }
+  }
+}
+
+.projects-card {
+  &__img {
+    position: relative;
+    margin-bottom: 1.0625rem;
+  }
+
+  &__img::after {
+    top: 0.4375rem !important;
+    right: 0.4375rem !important;
+    line-height: 1rem;
+  }
+
+  &:nth-child(1) {
+    .projects-card__img {
+      background: no-repeat center url('../../images/projects-img-1.jpg');
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(2) {
+    .projects-card__img {
+      background: no-repeat center url('../../images/projects-img-2.jpg');
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(3) {
+    .projects-card__img {
+      background: no-repeat center url('../../images/projects-img-3.jpg');
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(6) {
+    .projects-card__img {
+      background: no-repeat center url('../../images/projects-img-4.jpg');
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(7) {
+    .projects-card__img {
+      background: no-repeat center url('../../images/projects-img-5.jpg');
+      background-size: cover;
+    }
+  }
+
+  &__img {
+    height: 11.5rem;
+  }
+
+  &__descr {
+    display: block;
+    margin-bottom: 0.6875rem;
+    line-height: 1.375rem;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    max-width: 14px;
+    max-height: 14px;
+    margin-right: 0.1875rem;
+  }
+
+  &__span {
+    @include span-text;
+    line-height: 1.375rem;
+    color: $colorGreyDarker;
+  }
+
+  // MEDIA
+  @include media('max', 'xl') {
+    &__descr {
+      margin-bottom: 1.0625rem;
+    }
+  }
+
+  @include media('max', 'lg') {
+    &__descr {
+      margin-bottom: 0.6875rem;
+    }
+
+    &:nth-child(6),
+    &:nth-child(7) {
+      .projects-card__descr {
+        margin-bottom: 1.125rem;
+      }
+    }
+  }
+
+  @include media('max', 'md') {
+    &:nth-child(6),
+    &:nth-child(7) {
+      .projects-card__descr {
+        margin-bottom: 0.625rem;
+      }
+    }
+
+    &__img {
+      min-height: 11.5rem;
+      margin-bottom: 1.25rem;
+
+      &::after {
+        padding: 0.25rem 0.9375rem !important;
+        top: 0.4375rem !important;
+        right: 0.375rem !important;
+        line-height: 0.875rem !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+    &__descr {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.projects-large-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.375rem 1.875rem 1.875rem;
+
+  &.projects-large-card::after {
+    top: 0.3125rem;
+    right: 0.3125rem;
+  }
+
+  &:nth-child(4) {
+    background: no-repeat center url('../../images/projects-large-img-1.jpg');
+    background-size: cover;
+  }
+
+  &:nth-child(5) {
+    background: no-repeat center url('../../images/projects-large-img-2.jpg');
+    background-size: cover;
+  }
+
+  &__date {
+    @include span-text;
+    color: $colorWhite;
+  }
+
+  &__title {
+    max-width: 18.4375rem;
+    margin-bottom: 0.3125rem;
+    @include title-h3;
+    color: $colorWhite;
+    font-size: 1.5rem;
+  }
+
+  &__descr {
+    max-width: 18.4375rem;
+    line-height: 1.375rem;
+    color: $colorWhite;
+  }
+
+  // MEDIA
+  @include media('max', 'xl') {
+    padding: 2rem 1.875rem 2.25rem;
+  }
+
+  @include media('max', 'lg') {
+    &:nth-child(5) {
+      padding-bottom: 1.875rem;
+    }
+  }
+
+  @include media('max', 'md') {
+    &.projects-large-card {
+      justify-content: flex-end;
+      min-height: 26.375rem;
+      padding-bottom: 1.875rem;
+
+      &:after {
+        padding: 0.25rem 0.875rem;
+        line-height: 0.875rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    &__date {
+      margin-bottom: 0.4375rem;
+    }
+
+    &__title {
+      margin-bottom: 0.625rem;
+      line-height: 1.5rem;
+    }
+
+    &__descr {
+      margin-bottom: 0.9375rem;
+      line-height: 1.125rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.hashtag {
+  &--scenery {
+    .projects-card__img::after {
+      @include label {
+        content: '#пейзаж';
+      }
+    }
+  }
+
+  &--portrait {
+    .projects-card__img::after {
+      @include label {
+        content: '#портрет';
+      }
+    }
+  }
+
+  &--subject {
+    .projects-card__img::after {
+      @include label {
+        content: '#предмет';
+      }
+    }
+  }
+
+  &--fuji::after {
+    @include label {
+      content: '#fuji';
+    }
+  }
+
+  &--oblivion-project::after {
+    @include label {
+      content: '#проектзабвение';
+    }
+  }
+}

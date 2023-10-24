@@ -1,0 +1,24 @@
+@import '_variables';
+@import '_mixins';
+
+.logo {
+
+  &__icon {
+    width: 100%;
+    max-height: 1.9rem;
+  }
+
+  &__descr {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: 'TT Firs Neue Trl', sans-serif;
+    color: $colorGreyVeryBright;
+  }
+
+  @include media('max', 'md') {
+    &__descr {
+      line-height: 0.8125rem;
+      font-size: 0.625rem;
+    }
+  }
+}

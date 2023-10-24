@@ -1,0 +1,58 @@
+@import '_variables';
+
+// TITLES
+@mixin title-h3 {
+  font-family: 'TT Firs Neue Trl', sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 104%;
+}
+
+@mixin title-h3-576 {
+  font-family: 'TT Firs Neue Trl', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5rem
+}
+
+@mixin title-h2 {
+  font-family: 'TT Firs Neue Trl', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 104%;
+}
+
+@mixin title-h2-576 {
+  font-family: 'TT Firs Neue Trl', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+}
+
+// FORM
+@mixin label {
+  @content;
+  position: absolute;
+  padding: 0.35rem 0.875rem;
+  top: 0.875rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  color: $colorWhite;
+  background-color: $colorBlack;
+}
+
+@mixin span-text {
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+}
+
+// MEDIA
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}

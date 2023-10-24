@@ -1,0 +1,12 @@
+.just-validate-error-field.just-validate-error-field {
+  border: 1px solid $colorRed;
+}
+
+.just-validate-error-label {
+  position: absolute;
+  top: 0.1875rem;
+  left: 1.4375rem;
+  line-height: 0.6875rem;
+  font-size: 0.5625rem;
+  color: $colorRed !important;
+}

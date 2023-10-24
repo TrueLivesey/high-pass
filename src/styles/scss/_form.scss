@@ -1,0 +1,75 @@
+@import '_variables';
+@import '_mixins';
+
+.form {
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    position: relative;
+    flex-grow: 2;
+    display: inline-block;
+    margin-right: $grid-gap;
+  }
+
+  &__input {
+    min-width: 17.375rem;
+    width: 100%;
+    padding: 15px 23px;
+    margin: 0;
+    background-color: $colorBlackBright;
+    border: none;
+
+    &::placeholder {
+      color: $colorGrey;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $colorGrey;
+    }
+    &:-moz-placeholder {
+      color: $colorGrey;
+    }
+    &::-moz-placeholder {
+      color: $colorGrey;
+    }
+    &:-ms-input-placeholder {
+      color: $colorGrey;
+    }
+  }
+
+  // MEDIA
+  @include media('max', 'xl') {
+    &__item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__label {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    &__input {
+      width: 73.3%;
+    }
+  }
+
+  @include media('max', 'lg') {
+    &__input {
+      min-width: 16rem;
+    }
+  }
+
+  @include media('max', 'md') {
+    &__input {
+      min-width: auto;
+      width: 100%;
+      padding: 0.6875rem 1.4375rem;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '_variables';
+
+.social {
+  &__link {
+    display: inline-block;
+    
+
+    &:not(:last-child) {
+      margin-right: 1.25rem;
+    }
+
+    &:focus-visible {
+      outline: none;
+      .social__icon {
+        fill: $colorOrangeDarker;
+      }
+    }
+
+    &:hover {
+      .social__icon {
+        fill: $colorOrange;
+      }
+    }
+
+    &:active {
+      .social__icon {
+        fill: $colorOrangeDarker2;
+      }
+    }
+  }
+
+  &__icon {
+    max-width: 1.875rem;
+    max-height: 1.875rem;
+    transition: $transitionHoverFill;
+    fill: $colorGrey;
+  }
+}

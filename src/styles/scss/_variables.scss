@@ -1,0 +1,30 @@
+// COLORS
+$colorWhite: #fff;
+$colorGreyVeryBright: #E9E9E9;
+$colorGrey: #CACACA;
+$colorGreyDarker: #999999;
+$colorGreyDarkerEven: #808080;
+$colorBlackBright: #4A4A4A;
+$colorBlack85: rgba(32, 32, 32, 0.85);
+$colorBlack: #202020;
+$colorOrange: #FF6E30;
+$colorOrangeDarker: #BC572B;
+$colorOrangeDarker2: #CE4307;
+$colorPink: #F06666;
+$colorRed: #FF3030;
+$colorOrangeLighter: #FFD4C1;
+
+// GAP
+$section-gap: 4.25rem;
+$grid-gap: 1.875rem;
+
+// FONT-SIZE
+$descr: 1rem;
+
+// TRANSITION
+$transitionHoverColor: color .2s ease-in-out;
+$transitionHoverBackgroundColor: background-color .2s ease-in-out;
+$transitionHoverFill: fill .2s ease-in-out;
+
+// MEDIA SIZES
+$sizes: ("xs":320px, "sm":480px, "md":576px, "lg":768px, "xl":1024px);

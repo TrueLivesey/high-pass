@@ -1,0 +1,17 @@
+@import '_variables';
+
+#search {
+  path {
+    fill: $colorWhite;
+  }
+
+  
+}
+
+#search:hover {
+  
+  path {
+      fill: $colorOrange;
+    }
+  
+}
